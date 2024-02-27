@@ -1,14 +1,10 @@
 #!/usr/bin/python3
-def fizzbuzz():
-    for i in range(1, 101):
-        if i % 15 == 0:
-            print("FizzBuzz ", end="")
-        elif i % 5 == 0:
-            print("Buzz ", end="")
-        elif i % 3 == 0:
-            print("Fizz ", end="")
+for i in range(0, 9):
+    for j in range(i + 1, 10):
+        if i == 8 and j == 9:
+            print("{:d}{:d}".format(i, j))
         else:
-            print("{:d} ".format(i), end="")
+            print("{:d}{:d}".format(i, j), end=", ")
 ~
 ~
 ~
