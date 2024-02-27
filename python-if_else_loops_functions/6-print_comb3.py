@@ -1,55 +1,8 @@
 #!/usr/bin/python3
-for i in range(0, 9):
-    for j in range(i + 1, 10):
-        if i == 8 and j == 9:
-            print("{:d}{:d}".format(i, j))
+for i in range(0, 90):
+    if i % 10 > i / 10:
+        if i != 89:
+            print("{:02d}, ".format(i), end='')
         else:
-            print("{:d}{:d}".format(i, j), end=", ")
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
--- INSERT --                                                  0,1           All
-
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
--- INSERT --                                                  0,1           All
+            print("{:02d}".format(i))
 
