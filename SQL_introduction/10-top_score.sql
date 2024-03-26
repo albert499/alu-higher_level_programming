@@ -1,4 +1,2 @@
-i-- script 10
--- script that lists all records of the table second_table of the database
--- hbtn_0c_0 in your MySQL server.
+-- lists all records of second_table ordered by score
 SELECT score, name FROM second_table ORDER BY score DESC;
