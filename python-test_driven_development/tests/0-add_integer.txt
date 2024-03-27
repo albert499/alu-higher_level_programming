@@ -1,5 +1,5 @@
 # 0-add_integer.txt
-# Gedeon Obae Gekonge <gedeonobae@gmail.com>
+# Gedeon Obae Gekonge <gideonobae@gmail.com>
 
 ===========================
 How to Use 0-add_integer.py
@@ -10,8 +10,7 @@ This module defines an integer addition function ``add_integer(a, b=98)``.
 Usage
 =====
 
-``add_integer(...)``` returns the addition of its two :x
-arguments. For numbers,
+``add_integer(...)``` returns the addition of its two arguments. For numbers,
 that value is equivalent to using the ``+`` operator.
 
 ::
