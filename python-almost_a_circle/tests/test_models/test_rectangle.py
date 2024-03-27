@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# test_rectangle.py
 """Defines unittests for models/rectangle.py.
 Unittest classes:
     TestRectangle_instantiation - line 25
@@ -13,7 +12,6 @@ Unittest classes:
     TestRectangle_update_kwargs - line 676
     TestRectangle_to_dictionary - line 788
 """
-
 import io
 import sys
 import unittest
@@ -801,7 +799,6 @@ class TestRectangle_to_dictionary(unittest.TestCase):
         r = Rectangle(10, 2, 4, 1, 2)
         with self.assertRaises(TypeError):
             r.to_dictionary(1)
-
 
 if __name__ == "__main__":
     unittest.main()
