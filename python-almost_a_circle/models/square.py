@@ -1,97 +1,78 @@
 #!/usr/bin/python3
-"""Defines a class Square"""
-
-
-from inspect import classify_class_attrs
+"""Defines Square class"""
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Class that defines properties of Square.
+    """Defines square class and the methods"""
 
-     Attributes:
-        width (int): width of rectangle.
-        height (int): height of rectangle.
-        x (int): x.
-        y (int): y.
-        id (int): identity of square.
-    """
     def __init__(self, size, x=0, y=0, id=None):
-        """Creates new instances of Square
+        """Initialization on the sqaure method
 
         Args:
-            size (int): width and height of square.
-            x (int, optional): x. Defaults to 0.
-            y (int, optional): y. Defaults to 0.
-            id (int, optional): Identity number of square. Defaults to None.
-        """
-        super().__init__(size, size, x, y, id)
+            size (int): width and height
+            x (int): the x
+            y (int): the y
+            id (int) = the id
+            """
 
-    def __str__(self):
-        """Prints square"""
-        return ("[Square] ({}) {:d}/{:d} - {:d}".
-                format(self.id, self.x, self.y, self.size))
+        super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        """Property retriever for size.
-
-        Returns:
-            int: size of one side of square.
-        """
+        """Get/set the size of the Square."""
         return self.width
 
     @size.setter
     def size(self, value):
-        """Property setter for width of square.
-        Args:
-            value (int): width of square.
-        Raises:
-            TypeError: if width is not an integer.
-            ValueError: if width is less than or equal to zero.
-        """
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
-        
         self.width = value
         self.height = value
 
-    def update(self, *args, **kwargs):
-        """Assigns an argument to each attribute
+    def __str__(self):
+        """Print using __str__ function"""
+        my_str = f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+        return (my_str)
 
+    def update(self, *args, **kwargs):
+        """update the class Rectangle def update(self, *args)
         Args:
-            *args (tuple): arguments.
-            **kwargs (dict): double pointer to a dictionary.
-        """
-        if args is not None and len(args) is not 0:
-            list_atr = ['id', 'size', 'x', 'y']
-            for i in range(len(args)):
-                if list_atr[i] == 'size':
-                    setattr(self, 'width', args[i])
-                    setattr(self, 'height', args[i])
-                else:
-                    setattr(self, list_atr[i], args[i])
+            1st argument should be the id attribute
+            2nd argument should be the width attribute
+            3rd argument should be the height attribute
+            4th argument should be the x attribute
+            5th argument should be the y attribute
+        Raises: No error
+        Retuirns: the newe values"""
+
+        if args != 0 and len(args) != 0:
+            a = 0
+            for arg in args:
+                if a == 0:
+                    self.id = arg
+                elif a == 1:
+                    self.size = arg
+                elif a == 2:
+                    self.x = arg
+                elif a == 3:
+                    self.y = arg
+                a += 1
+
         else:
-            for key, value in kwargs.items():
-                if key == 'size':
-                    setattr(self, 'width', value)
-                    setattr(self, 'height', value)
-                else:
-                    setattr(self, key, value)
+            for k, v in kwargs.items():
+                if k == "size":
+                    self.size = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
+                elif k == "id":
+                    self.id = v
 
     def to_dictionary(self):
-        """Returns the dictionary representation of a Square.
-
-        Returns:
-            dict: square.
-        """
-        dict1 = self.__dict__
-        dict2 = {}
-        dict2['id'] = dict1['id']
-        dict2['size'] = dict1['_Rectangle__width']
-        dict2['x'] = dict1['_Rectangle__x']
-        dict2['y'] = dict1['_Rectangle__y']
-
-        return dict2
+        """Return the dictionary representation of the Square."""
+        return {
+            "id": self.id,
+            "size": self.width,
+            "x": self.x,
+            "y": self.y
+        }
