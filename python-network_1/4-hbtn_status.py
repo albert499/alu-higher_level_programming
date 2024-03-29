@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-"""Fetches http://0.0.0.0:5050/status"""
+""" Uses requests module -- yay"""
+import requests
+
 if __name__ == "__main__":
-    import requests
-    req = requests.get('https://alx-intranet.hbtn.io/status')
-    response = req.text
-    print("Body response:")
-    print("\t- type: {}".format(type(response)))
-    print("\t- content: {}".format(response))
+    response = requests.get('https://intranet.hbtn.io/status')
+    print("Body response:\n\t- type: {}\n\t- content: {}"
+          .format(type(response.text), response.text))
