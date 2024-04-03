@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Fetches https://intranet.hbtn.io/status."""
+"""__summary__
+- Write a Python script that
+- fetches https://intranet.hbtn.io/status.
+"""
 import requests
 
 
